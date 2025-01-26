@@ -1,64 +1,115 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Practice Project with Laravel 9.x
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a basic application built with Laravel 9.x. It was created for practice and learning purposes and includes the following main features:
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Post Management (CRUD)**: 
+  - List posts.
+  - Create new posts.
+  - View post details.
+  - Pagination to navigate between posts.
+- **Protected Dashboard**:
+  - Access only for authenticated users.
+- **Test Data Generation**:
+  - Seeder to create posts with data generated using the Faker library.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Prerequisites
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Before starting, ensure you have the following components installed:
 
-## Learning Laravel
+- PHP >= 8.0
+- Composer
+- MySQL or any compatible database
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Follow these steps to set up and run the project locally:
 
-## Laravel Sponsors
+1. Clone the repository:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+   ```bash
+   git clone git@github.com:guduchango/platzi-laravel-basic.git
+   cd platzi-laravel-basic
+   ```
 
-### Premium Partners
+2. Install PHP dependencies:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+   ```bash
+   composer install
+   ```
 
-## Contributing
+3. Configure the `.env` file:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   - Copy the example file:
+     ```bash
+     cp .env.example .env
+     ```
+   - Set your database credentials in the `.env` file.
 
-## Code of Conduct
+4. Generate the application key:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```bash
+   php artisan key:generate
+   ```
 
-## Security Vulnerabilities
+5. Run migrations and seeders:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ```bash
+   php artisan migrate --seed
+   ```
+
+6. Start the development server:
+
+   ```bash
+   php artisan serve
+   ```
+
+## Usage
+
+- Visit `http://localhost:8000` to access the application.
+- Use the dashboard by logging in with the credentials created or generated via the seeder.
+
+## Project Structure
+
+- `routes/web.php`: Defines the main routes of the application.
+- `app/Http/Controllers`: Contains the controllers for the project functionalities.
+- `resources/views`: Blade files for the application views.
+- `database/seeders`: Seeders for generating test data.
+
+## Images
+
+_Here you can add screenshots or GIFs showcasing how the application works._
+
+![image1](https://images.edgardoponce.com/platzi-laravel-basic/image6.png)
+![image2](https://images.edgardoponce.com/platzi-laravel-basic/image5.png)
+![image3](https://images.edgardoponce.com/platzi-laravel-basic/image4.png)
+![image4](https://images.edgardoponce.com/platzi-laravel-basic/image3.png)
+![image5](https://images.edgardoponce.com/platzi-laravel-basic/image2.png)
+![image6](https://images.edgardoponce.com/platzi-laravel-basic/image1.png)
+
+## Technologies Used
+
+- Laravel 9.x
+- PHP 8.x
+- MySQL
+- Faker (for test data)
+- Blade (for views)
+
+## Next Steps
+
+- Add role-based authentication.
+- Implement unit tests.
+- Enhance the design with Tailwind CSS.
+
+## Contributions
+
+If you want to contribute to this project, feel free to fork it and submit a pull request.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License. You can find more details in the `LICENSE` file.
+
+---
+
+Thank you for exploring this project! If you have any questions or suggestions, feel free to contact me.
